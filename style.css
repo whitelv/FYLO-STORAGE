@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+:root{
+
+    --gradient-from-left-to-right: linear-gradient(to left, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+
+    --color-neutral-pale-blue: hsl(243, 100%, 93%);
+    --color-neutral-grayish-blue: hsl(229, 7%, 55%);
+    --color-neutral-dark-blue: hsl(228, 56%, 26%);
+    --color-neutral-very-dark-blue: hsl(229, 57%, 11%);
+
+    --ff-raleway: 'Raleway', sans-serif;
+
+    --fs-300: 0.875rem;
+    --fs-400: 1.125rem;
+    --fs-500: 1.25rem;
+    --fs-600: 1.5rem;
+    --fs-700: 1.75rem;
+    --fs-800: 2rem;
+    --fs-900: 5rem;
+
+    --fw-regular: 400;
+    --fw-semibold: 600;
+
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+img,
+svg{
+    display: block;
+    width: 100%;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-neutral-very-dark-blue);
+    background-image: url("images/bg-mobile.png");
+    background-size: cover;
+    color: var(--color-neutral-pale-blue);
+    font-family: var(--ff-raleway);
+    font-size: var(--fs-300);
+}
+
+main{
+    width: 100%;
+    max-width: 20.375rem;
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+
+}
+.flex-group{
+    display: flex;
+}
+.space-between{
+    justify-content: space-between;
+}
+
+.left-side,
+.right-side{
+    background-color: var(--color-neutral-dark-blue);
+    padding: 2rem;
+    border-radius: 0.5rem;
+}
+
+.left-side{
+    border-top-right-radius: 5rem;
+    margin-bottom: 1rem;
+}
+
+.logo{
+    margin-bottom: 2rem;
+}
+
+
+.right-side{
+    position: relative;
+}
+
+.card{
+    width: 3rem;
+    aspect-ratio: 1;
+    display: grid;
+    place-content: center;
+    background-color: var(--color-neutral-very-dark-blue);
+    margin-right: 1rem;
+    border-radius: 0.5rem;
+}
+
+.bar-info{
+    margin-bottom: 1rem;
+}
+
+.bar-info span{
+    font-weight: var(--fw-semibold);
+}
+
+.outer-bar{
+    width: 100%;
+    height: 1.5rem;
+    padding: 0.3rem;
+    background-color: var(--color-neutral-very-dark-blue);
+    border-radius: 100vh;
+    margin-bottom: 0.5rem;
+}
+.inner-bar{
+    display: grid;
+    width: 81.5%;
+    height: 100%;
+    background-image: var(--gradient-from-left-to-right);
+    border-radius: 100vh;
+    align-items: center;
+    padding-right: 0.2rem;
+}
+
+.scroller{
+    width: 0.6rem;
+    aspect-ratio: 1;
+    background-color: white;
+    margin-left: auto;
+    border-radius: 100vh;
+}
+.bar{
+    margin-bottom: 1rem;
+}
+
+
+.bar  p{
+    font-weight: var(--fw-semibold);
+}
+
+.message{
+    position: absolute;
+    width: 100%;
+    max-width: 11.25rem;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    text-align: center;
+    background-color: white;
+    border-radius: 0.5rem;
+    bottom: -2.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.message p{
+    color: var(--color-neutral-grayish-blue);
+    font-weight: var(--fw-semibold);
+}
+
+.message p span{
+    font-size: var(--fs-700);
+    color: var(--color-neutral-very-dark-blue);
+}
+
+@media (min-width: 800px) and (max-height: 1000px){
+    body {
+        background-image: url("images/bg-desktop.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: bottom;
+    }
+    main{
+        flex-direction: row;
+        gap: 1.5rem;
+        width: 100%;
+        max-width: 57.5rem;
+        align-items: end;
+    }
+    .left-side{
+        width: 100%;
+        max-width: 20rem;
+        margin-bottom: 0;
+    }
+
+    .right-side{
+        width: 100%;
+        max-width: 36rem;
+    }
+    .message{
+        top: -3rem;
+        left: unset;
+        right: 2rem;
+        transform: unset;
+        /*position: relative;*/
+    }
+    .message::after{
+        content: "";
+        display: block;
+        width: 0;
+        height: 0;
+        border-top: 1.5rem solid white;
+        border-left: 1.5rem solid transparent;
+        bottom: -1rem;
+        right: 0;
+        position: absolute;
+    }
+    .bar{
+        margin-bottom: 0;
+    }
+}
+
+
